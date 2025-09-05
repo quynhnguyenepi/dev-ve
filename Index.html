@@ -1,56 +1,270 @@
 
 <!DOCTYPE html>
 <html lang='en'>
-	<script src="https://optimizely-staging.s3.amazonaws.com/js/8405090547.js"></script>
+<head>
+    <script src="https://optimizely-staging.s3.amazonaws.com/js/8405090547.js"></script>
     <meta charset='utf-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <title>[DEMO] Save the Arctic Fox</title>
     
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='https://optimizely.github.io/quynh/styles.css' rel='stylesheet'>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N72KN23HS6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-N72KN23HS6');
-</script>
-  </head>
-  <body class="arctic-fox">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N72KN23HS6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N72KN23HS6');
+    </script>
+    
+    <style>
+        body.arctic-fox {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        h1 {
+            width: 100%;
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .main {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .main strong {
+            color: #2980b9;
+            font-weight: 600;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .sidebar h3:first-child {
+            margin-top: 0;
+        }
+        
+        /* Yellow Donate Button Styling */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 8px 0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Donate Today Button - Yellow */
+        .button:first-of-type {
+            background-color: #f1c40f;
+            color: #2c3e50;
+            box-shadow: 0 4px 6px rgba(241, 196, 15, 0.3);
+        }
+        
+        .button:first-of-type:hover {
+            background-color: #f39c12;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(241, 196, 15, 0.4);
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        /* Learn More Button - Blue */
+        .button:nth-of-type(2) {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .button:nth-of-type(2):hover {
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn {
+            margin: 5px 0;
+            width: 100%;
+        }
+        
+        .form-control {
+            margin-bottom: 15px;
+        }
+        
+        .list-group {
+            margin-top: 15px;
+        }
+        
+        .list-group-item {
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        
+        .list-group-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .list-group-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .sidebar p {
+            margin: 10px 0;
+        }
+        
+        .sidebar p a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .sidebar p a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 0 10px;
+            }
+            
+            .main, .sidebar {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .main {
+                padding: 20px;
+            }
+            
+            .sidebar {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="arctic-fox">
     <div class='container'>
-      <h1>Save the Arctic Fox</h1>
-      <img src="https://optimizely.github.io/quynh/arctic-fox-banner.jpg" class="banner">
-      <div class="main">
-        <p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-		<p>Today, there are fewer than 200 Arctic foxes in Norway Sweden, and Finland combined. </p>
-        <p>To save the Arctic foxes, we need to <strong>give them more food</strong> and <strong>control the population of red foxes.</strong></p>
-        <p>Your donation will go towards feeding the Arctic foxes in the summer and winter to make sure they are healthy enough to reproduce. </p>
-      </div>
-      <div class="sidebar">
-        <a href="#" class="button">Donate Today</a>
-      </div>
-    </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <h1>Save the Arctic Fox</h1>
+        <img src="https://optimizely.github.io/quynh/arctic-fox-banner.jpg" class="banner" alt="Arctic Fox Banner">
+        <div class="main">
+          <p>1. Currently, there are fewer than 150 snow leopards left in the mountainous regions of Kyrgyzstan and Tajikistan.</p>
+<p>2. To protect these snow leopards, we need to <strong>preserve their natural habitat</strong> and <strong>limit illegal hunting activities.</strong></p>
+<p>3. Your contribution will help provide tracking collars and patrol teams to monitor their movements year-round.</p>
 
-  </body>
+<p>4. There are now fewer than 300 African penguins in certain coastal colonies of South Africa and Namibia.</p>
+<p>5. To help the African penguins, we should <strong>reduce ocean pollution</strong> and <strong>restore safe nesting grounds.</strong></p>
+<p>6. Your donation will fund beach cleanups and artificial nest creation to support breeding.</p>
+
+<p>7. Less than 500 giant salamanders remain in Japan's rivers due to habitat destruction and pollution.</p>
+<p>8. To save these salamanders, we need to <strong>clean polluted waterways</strong> and <strong>ban harmful fishing practices.</strong></p>
+<p>9. Your support will allow for river restoration projects and community education programs.</p>
+
+<p>10. Only about 100 Kakapo parrots are left in New Zealand, making them one of the rarest birds in the world.</p>
+<p>11. To protect the Kakapo, conservationists must <strong>provide supplemental feeding</strong> and <strong>control invasive predators.</strong></p>
+<p>12. Your contribution will help build predator-proof sanctuaries and ensure the birds have a healthy diet.</p>
+
+<p>13. Today, fewer than 250 Bactrian camels roam the Gobi Desert in Mongolia and China.</p>
+<p>14. To save the Bactrian camel, we need to <strong>protect water sources</strong> and <strong>establish safe migration corridors.</strong></p>
+<p>15. Your donation will support water well construction and community engagement in conservation efforts.</p>
+
+        </div>
+        <div class="sidebar">
+            <a href="#" class="button">Donate Today</a>
+            <a href="#" class="button">Learn More</a>
+            <button class="btn btn-primary">Another Button</button>
+            <input type="submit" value="Submit Form" class="btn btn-success">
+            <p><a href="#">Text Link 1</a></p>
+            <p><a href="#">Text Link 2</a></p>
+            <p><a href="#">Text Link 3</a></p>
+            
+            <h3>Search</h3>
+            <input type="search" placeholder="Search..." class="form-control">
+            
+            <h3>Text Field</h3>
+            <input type="text" placeholder="Enter text here" class="form-control">
+            
+            <h3>Text Area</h3>
+            <textarea class="form-control" rows="3" placeholder="Enter longer text here"></textarea>
+            
+            <h3>Menu</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Menu Item 1</a></li>
+                <li class="list-group-item"><a href="#">Menu Item 2</a></li>
+                <li class="list-group-item"><a href="#">Menu Item 3</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</body>
 </html>
+
+
